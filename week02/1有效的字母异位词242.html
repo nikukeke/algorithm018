@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 解题思路
+        // 1、排序
+        //    先用split将字符串转化为数组
+        //    再执行sort进行排序
+        //    再把数组join转化为字符串
+        //    返回两个字符串的强对比
+        var isAnagram = function (s, t) {
+            return s.split('').sort().join('') == t.split('').sort().join('') ? true : false;
+        };
+
+
+        // 2、哈希
+        var isAnagram = function (s, t) {
+            if (s.length !== t.length) {
+                return false;
+            }
+
+            var hash = Array(26).fill(0);
+            var codeA = 'a'.charCodeAt();
+            let length = s.length;
+            for (let i = 0; i < length; i++) {
+                hash[s.charCodeAt(i) - codeA]++;
+                hash[t.charCodeAt(i) - codeA]--;
+            }
+            for (let value of hash) {
+                if (value != 0) {
+                    return false;
+                }
+            }
+            return true;
+        };
+    </script>
+</body>
+
+</html>
