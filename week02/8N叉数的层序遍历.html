@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        var levelOrder = function (root) {
+            if (root === null) {
+                return []
+            }
+            let res = [];
+            let queue = [root];
+            while (queue.length > 0) {
+                let length = queue.length;
+                let tmp = [];
+                for (let i = 0; i < length; i++) {
+                    let cur = queue.shift();
+                    tmp.push(cur.val);
+                    queue.push(...cur.children);
+                }
+                res.push(tmp);
+            }
+            return res;
+        };
+    </script>
+</body>
+
+</html>

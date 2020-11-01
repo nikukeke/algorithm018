@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 解题思路
+        // 1、递归
+        var postorder = function (root) {
+            const res = [];
+            function traveral(root) {
+                if (root !== null) {
+                    root.children.forEach(child => traveral(child))
+                    res.push(root.val)
+                }
+            }
+            traveral(root);
+            return res;
+        };
+
+    </script>
+</body>
+
+</html>
