@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var serialize = function (root) {
+            if (root == null) {
+                return 'X,'
+            }
+            const leftSerialized = serialize(root.left);
+            const rightSerialized = serialize(root.right);
+            return root.val + ',' + leftSerialized + rightSerialized;
+        };
+
+        var deserialize = function (data) {
+            const list = data.split(',');
+            const buildTree = (list) => {
+                const rootVal = list.shift();
+                if (rootVal == 'X') {
+                    return null;
+                }
+                const root = new TreeNode(rootVal);
+                root.left = buildTree(list);
+                root.right = buildTree(list);
+                return root;
+            }
+            return buildTree(list);
+        };
+    </script>
+</body>
+
+</html>

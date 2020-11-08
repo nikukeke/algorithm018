@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 解题思路
+        // 1、回溯
+        var generateParenthesis = function (n) {
+            const res = [];
+            const generate = (str, left, right) => {
+                if (str.length == 2 * n) {
+                    res.push(str)
+                    return;
+                }
+                if (left > 0) {
+                    generate(str + '(', left - 1, right)
+                }
+                if (right > left) {
+                    generate(str + ')', left, right - 1)
+                }
+            }
+            generate('', n, n);
+            return res;
+        };
+
+    </script>
+</body>
+
+</html>
