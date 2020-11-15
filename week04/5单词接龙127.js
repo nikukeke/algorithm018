@@ -1,4 +1,5 @@
-
+// 解题思路
+// 1、BFS
 var ladderLength = function (beginWord, endWord, wordList) {
     const workSet = new Set(wordList);
     const queue = [];
