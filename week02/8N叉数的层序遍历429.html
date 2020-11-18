@@ -61,6 +61,24 @@
             }
             return result;
         };
+
+        var levelOrder = function (root) {
+            let nums = [];
+            search(nums, root, 0)
+            return nums;
+        };
+        function search(nums, node, k) {
+            if (node == null) {
+                return
+            }
+            if (nums[k] == undefined) {
+                nums[k] = []
+            }
+            nums[k].push(node.val)
+            for (let i = 0; i < node.children.length; i++) {
+                search(nums, node.children[i], k + 1)
+            }
+        }
     </script>
 </body>
 
