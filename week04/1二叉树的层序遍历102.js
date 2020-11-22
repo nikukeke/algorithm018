@@ -1,7 +1,7 @@
 // 解题思路
 // 1.BFS
-// 时间复杂度：O(N)
-// 空间复杂度：O(N)
+// 每个点进队出队各一次，故渐进时间复杂度：O(N)
+// 队列中元素的个数不超过n个，故渐进空间复杂度：O(N)
 var levelOrder = function (root) {
     const result = [];
     if (!root) {
