@@ -1,3 +1,4 @@
+// 有bug，待修改
 var maxProfit = function (k, prices) {
     if (prices == null || prices.length == 0) {
         return 0
