@@ -67,39 +67,24 @@
             search(nums, root, 0);
             return nums;
         };
-<<<<<<< HEAD
-=======
 
         var levelOrder = function (root) {
             let nums = [];
             search(nums, root, 0)
             return nums;
         };
->>>>>>> 1bee92ad3e633f9c3c2ad461293e207af53acf9e
         function search(nums, node, k) {
             if (node == null) {
                 return
             }
             if (nums[k] == undefined) {
-<<<<<<< HEAD
-                nums[k] = [];
-            }
-            nums[k].push(node.val);
-=======
                 nums[k] = []
             }
             nums[k].push(node.val)
->>>>>>> 1bee92ad3e633f9c3c2ad461293e207af53acf9e
             for (let i = 0; i < node.children.length; i++) {
                 search(nums, node.children[i], k + 1)
             }
         }
-<<<<<<< HEAD
-        levelOrder([1, null, 3, 2, 4, null, 5, 6])
-        
-
-=======
->>>>>>> 1bee92ad3e633f9c3c2ad461293e207af53acf9e
     </script>
 </body>
 

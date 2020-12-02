@@ -35,3 +35,12 @@ var climbStairs = function (n) {
     const fib_n = Math.pow((1 + sqrt_5) / 2, n + 1) - Math.pow((1 - sqrt_5) / 2, n + 1);
     return Math.round(fib_n / sqrt_5);
 };
+
+
+// 超时递归
+var climbStairs = function (n) {
+    if (n <= 2) {
+        return n;
+    }
+    return climbStairs(n - 1) + climbStairs(n - 2);
+};
