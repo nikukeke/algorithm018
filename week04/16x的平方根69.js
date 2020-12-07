@@ -3,7 +3,7 @@
 var mySqrt = function (x) {
     if (x == 0 || x == 1) {
         return x;
-    };
+    }
     let left = 1;
     let right = x;
     while (right - left > 1) {

@@ -2,15 +2,16 @@
 // 1、二分法
 var searchMatrix = function (matrix, target) {
     matrix = matrix.flat(2);
-    let start = 0, end = matrix.length - 1;
-    while (start <= end) {
-        const mid = start + ((end - start) >> 1);
-        if (matrix[mid] === target) {
+    let left = 0;
+    let right = matrix.length - 1;
+    while (left <= right) {
+        let mid = left + ((right - left) >> 1);
+        if (target == matrix[mid]) {
             return true;
         } else if (matrix[mid] < target) {
-            start = mid + 1;
+            left = mid + 1;
         } else {
-            end = mid - 1;
+            right = mid - 1;
         }
     }
     return false;
