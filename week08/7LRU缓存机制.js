@@ -66,11 +66,6 @@ LRUCache.prototype._addToHead = function (node) {
     this.dummyHead.next = node;
 }
 
-
-/** 
- * @param {number} key
- * @return {number}
- */
 LRUCache.prototype.get = function (key) {
     if (key in this.hashmap) {
         const node = this.hashmap[key];
@@ -81,11 +76,6 @@ LRUCache.prototype.get = function (key) {
     }
 };
 
-/** 
- * @param {number} key 
- * @param {number} value
- * @return {void}
- */
 LRUCache.prototype.put = function (key, value) {
     if (key in this.hashmap) {
         const node = this.hashmap[key];
@@ -102,12 +92,4 @@ LRUCache.prototype.put = function (key, value) {
         this._addToHead(node);
     }
 };
-/**
- * Your LRUCache object will be instantiated and called as such:
- * var obj = new LRUCache(capacity)
- * var param_1 = obj.get(key)
- * obj.put(key,value)
- */
 
-
- 

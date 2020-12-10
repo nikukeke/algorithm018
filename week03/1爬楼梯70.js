@@ -1,5 +1,16 @@
 // 解题思路
-// 1、动态规划
+
+// 1、超时递归
+// 时间复杂度:O(2的n次方)
+// 空间复杂度:O(n)
+var climbStairs = function (n) {
+    if (n <= 2) {
+        return n;
+    }
+    return climbStairs(n - 1) + climbStairs(n - 2);
+};
+
+// 2、动态规划
 // 爬n级台阶的方式数 = 爬n-1级台阶的方式数 + 爬n-2级台阶的方式数
 // 调用栈的深度是楼梯数n
 // 空间复杂度是O(n),时间复杂度是O(n)
@@ -14,6 +25,7 @@ var climbStairs = function (n) {
 };
 
 // 2、优化
+// 斐波那契数列
 // 因为dp[i]只和dp[i-1]和dp[i-2]有关，所以可以分别用变量存储
 // 空间复杂度：O(1)
 var climbStairs = function (n) {
@@ -37,10 +49,3 @@ var climbStairs = function (n) {
 };
 
 
-// 超时递归
-var climbStairs = function (n) {
-    if (n <= 2) {
-        return n;
-    }
-    return climbStairs(n - 1) + climbStairs(n - 2);
-};
