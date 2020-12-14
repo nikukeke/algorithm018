@@ -22,6 +22,9 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
 };
 
 // 二、动态规划
+// 时间复杂度: O(mn)
+// 空间复杂度: O(mn)
+
 var uniquePathsWithObstacles = function (obstacleGrid) {
     // 出发点就是障碍物情况
     if (obstacleGrid[0][0] == 1) return 0;
@@ -58,7 +61,9 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
 
 
 // 三、动态规划-压缩降维
-//  减少空间复杂度
+// 减少空间复杂度
+// 时间复杂度: O(mn)
+// 空间复杂度: O(n)
 var uniquePathsWithObstacles = function (obstacleGrid) {
     var n = obstacleGrid.length;
     var m = obstacleGrid[0].length;
@@ -82,7 +87,8 @@ var uniquePathsWithObstacles = function (obstacleGrid) {
 //      初始化第一步可达，为1
 //      for双循环内就可以少一层判断
 
-
+// 时间复杂度: O(mn)
+// 空间复杂度: O(n)
 var uniquePathsWithObstacles = function (obstacleGrid) {
     var n = obstacleGrid.length;
     var m = obstacleGrid[0].length;

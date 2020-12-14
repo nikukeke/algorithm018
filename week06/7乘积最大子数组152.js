@@ -4,6 +4,7 @@
 // 由于存在负数，那么会导致最大的变最小的，最小的变最大的。因此还需要维护当前最小值imin，imin=min(imin * nums[i], nums[i])
 // 当负数出现时则imax与imin进行交换再进行下一步计算
 // 时间复杂度: O(n)
+// 空间复杂度为: O(1)
 var maxProduct = function (nums) {
     var max = Number.MIN_SAFE_INTEGER, imax = 1, imin = 1;
     for (let i = 0; i < nums.length; i++) {
