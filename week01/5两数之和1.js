@@ -67,6 +67,34 @@ var twoSum = function (nums, target) {
     }
 };
 
+
+var twoSum = function (nums, target) {
+    let result = [];
+    let map = new Map();
+    for(let i = 0; i < nums.length; i++) {
+        map.set(nums[i],i)
+    }
+    for(let i = 0; i < nums.length; i++) {
+        let anotherOne = target - nums[i];
+        if(map.has(anotherOne) && map.get(anotherOne) !== i) {
+            return [i, map.get(anotherOne)]
+        }
+    } 
+};
+
+
+var twoSum = function(nums, target){
+    const map = new Map();
+    for(let i=0; i<nums.length; i++){
+        if (map.has(nums[i])){
+            return [map.get(nums[i]),i];
+        }else{
+            map.set(target-nums[i],i);
+        }
+    }
+}
+
+
 const twoSum = (nums, target) => {
     // 1.构建哈希表
     // 存储方式{need, index}
@@ -82,4 +110,3 @@ const twoSum = (nums, target) => {
         }
     }
 }
-
