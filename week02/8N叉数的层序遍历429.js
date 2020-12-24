@@ -57,11 +57,6 @@ var levelOrder = function (root) {
     return nums;
 };
 
-var levelOrder = function (root) {
-    let nums = [];
-    search(nums, root, 0)
-    return nums;
-};
 function search(nums, node, k) {
     if (node == null) {
         return
@@ -74,3 +69,24 @@ function search(nums, node, k) {
         search(nums, node.children[i], k + 1)
     }
 }
+
+
+// ----------
+
+var levelOrder = function(root) {
+    if (root === null) return [];
+    let res = [];
+    let queue = [root];
+    while (queue.length > 0) {
+        let length = queue.length;
+        let arr = [];
+        for (let i = 0; i < length; i++) {
+            let node = queue.shift();
+            arr.push(node.val);
+            queue.push(...node.children)
+        }
+        res.push(arr)
+    }
+    return res
+};
+ 

@@ -32,3 +32,20 @@ var twoSum = function (nums, target) {
     }
     i--;
 };
+
+
+const twoSum = (nums, target) => {
+    // 1.构建哈希表
+    // 存储方式{need, index}
+    const map = new Map();
+    // 2.遍历数组
+    for (let i = 0; i < nums.length; i++) {
+        // 2.1如果找到target - nums[i]的值
+        if (map.has(nums[i])) {
+            return [map.get(nums[i]), i];
+        } else {
+            // 2.2 如果每找到则进行设置
+            map.set(target - nums[i], i)
+        }
+    }
+}
