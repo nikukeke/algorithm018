@@ -1,4 +1,6 @@
 var isValid = function (s) {
+    const n = s.length;
+    if(n % 2 === 1) return false;
     const cache = []
     const map = new Map()
     map.set("(", ")")
